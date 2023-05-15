@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jude2/Source/Repos/Chog/Chog/Content/BackgroundTest.jpg","C:/Users/jude2/Source/Repos/Chog/Chog/Content/bin/DesktopGL/Content/BackgroundTest.xnb","TextureProcessor","Texture2DContent",155951,807485,0.2637742
+"C:/Users/jude2/Source/Repos/Chog/Chog/Content/ball.png","C:/Users/jude2/Source/Repos/Chog/Chog/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.9837371
+"C:/Users/jude2/Source/Repos/Chog/Chog/Content/chog.png","C:/Users/jude2/Source/Repos/Chog/Chog/Content/bin/DesktopGL/Content/chog.xnb","TextureProcessor","Texture2DContent",6634,109153,0.4093489

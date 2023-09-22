@@ -36,8 +36,8 @@ namespace Chog.Objects
                 Color.White,
                 0f,
                 new Vector2(0, 0),
-                new Vector2((float)_graphics.GraphicsDevice.Viewport.Width,
-                            (float)_graphics.GraphicsDevice.Viewport.Height),
+                new Vector2((float)_graphics.GraphicsDevice.Viewport.Width / background.Width+1,
+                            (float)_graphics.GraphicsDevice.Viewport.Height / background.Height),
                 SpriteEffects.None,
                 0f);
 

@@ -52,7 +52,7 @@ namespace Chog.Objects.Participants
             if (keyState.IsKeyDown(Keys.A) && this.CanMoveLeft)
             {
                 this.PositionX -= playerVelocity;
-                 SetAnimation("walking.png");
+                 SetAnimation("walking_flipped.png");
             }
 
             if (keyState.IsKeyDown(Keys.S) && this.CanMoveDown)
@@ -63,6 +63,8 @@ namespace Chog.Objects.Participants
                 this.PositionX += playerVelocity;
                 SetAnimation("walking.png");
             }
+            if (keyState.IsKeyUp(Keys.A) && keyState.IsKeyUp(Keys.D))
+                SetAnimation("idle.png");
         }
         
         

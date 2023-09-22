@@ -16,15 +16,15 @@ namespace Chog
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            _graphics.PreferredBackBufferWidth = 800;
-            _graphics.PreferredBackBufferHeight = 800;
+            _graphics.PreferredBackBufferWidth = 1000;
+            _graphics.PreferredBackBufferHeight = 1000;
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            currentScene = new Scene(new Vector2(1, 1), Content);
+            currentScene = new Scene(new Vector2(1, 1), Content, _graphics.GraphicsDevice);
             base.Initialize();
         }
 

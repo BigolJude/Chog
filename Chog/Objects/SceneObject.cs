@@ -8,39 +8,60 @@ namespace Chog.Objects
     internal class SceneObject
     {
         private const int COLLISION_BUFFER = 5;
+
         protected string name;
+
+        #region Movement Variables
+
         protected float top;
         protected float bottom;
         protected float left;
         protected float right;
-        protected Texture2D texture;
-        protected Vector2 position;
-        protected Vector2 origin;
-        protected float speed;
-        protected bool visible;
-        protected bool physics;
         protected bool canMoveUp;
         protected bool canMoveDown;
         protected bool canMoveLeft;
         protected bool canMoveRight;
+        protected bool physics;
+        protected float speed;
 
-        public SceneObject(string mName, Vector2 mPosition, Texture2D mTexture, float mSpeed, bool mVisible, bool mPhysics)
+        #endregion
+
+        #region Position Variables
+
+        protected Vector2 position;
+        protected Vector2 origin;
+
+        #endregion
+
+        #region Apperance Variables
+
+        protected Dictionary<string, Animation> animationMap;
+        protected int currentTextureIndex = 0;
+        protected Animation animation;
+        protected bool visible;
+
+        #endregion
+
+        public SceneObject(string mName, Vector2 mPosition, Dictionary<string, Animation> mTextureMap, float mSpeed, bool mVisible, bool mPhysics)
         {
             this.name = mName;
             this.speed = mSpeed;
             this.position = mPosition;
-            this.texture = mTexture;
+            this.animationMap = mTextureMap;
             this.visible = mVisible;
             this.physics = mPhysics;
+            
+            SetAnimation("idle.png");
             SetDimensions();
         }
         private void SetDimensions()
         {
-            this.top = position.Y - texture.Height / 2;
-            this.bottom = position.Y + texture.Height / 2;
-            this.left = position.X - texture.Width / 2;
-            this.right = position.X + texture.Width / 2;
-            this.origin = new Vector2(texture.Width / 2, texture.Height / 2);
+            this.top = position.Y;
+            this.bottom = position.Y + animation.FrameHeight;
+            this.left = position.X;
+            this.right = position.X + animation.FrameWidth;
+            this.origin = new Vector2(animation.FrameWidth / 2, animation.FrameHeight / 2);
+
         }
         public void SetMoveability(List<SceneObject> sceneObjects, GraphicsDeviceManager _graphics)
         {
@@ -88,6 +109,11 @@ namespace Chog.Objects
             }
         }
 
+        public void SetAnimation(string animationName)
+        {
+            animationMap.TryGetValue(animationName, out this.animation);
+        }
+
         #region Allignment Checks
         private bool ObjectsAllignedVertically(SceneObject sceneObject)
         {
@@ -105,7 +131,7 @@ namespace Chog.Objects
         }
         #endregion
 
-        #region Values
+        #region Gets and Sets
         public string Name
         {
             get { return this.name; }
@@ -119,10 +145,15 @@ namespace Chog.Objects
         {
             this.visible = !this.visible;
         }
-        public Texture2D Texture
+        public Dictionary<string, Animation> TextureMap
         {
-            get { return texture; }
-            set { texture = value; }
+            get { return animationMap; }
+            set { animationMap = value; }
+        }
+        public Animation Animation
+        {
+            get { return animation; }
+            set { animation = value; }
         }
         public Vector2 Position
         {
@@ -164,11 +195,11 @@ namespace Chog.Objects
         }
         public float Width
         {
-            get { return texture.Width; }
+            get { return animation.FrameWidth; }
         }
         public float Height
         {
-            get { return texture.Height; }
+            get { return animation.FrameHeight; }
         }
         public float Top
         {
@@ -219,5 +250,7 @@ namespace Chog.Objects
             get { return canMoveRight; }
         }
         #endregion
+
+
     }
 }

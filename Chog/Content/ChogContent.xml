@@ -1,0 +1,26 @@
+<scenes>
+	<scene locationX="1" 
+		   locationY="1"
+		   backgroundTexture="Background.jpg">
+		<sceneObject name="player"
+					 positionX="450" 
+					 positionY="300"
+					 speed="200"
+					 visible="true"
+					 physics="true">
+			<texture name="idle.png" frameCount="1" frameWidth="222" frameHeight="100" />
+			<texture name="falling.png" frameCount="1" frameWidth="222" frameHeight="100" />
+      <texture name="walking.png" frameCount="4" frameWidth="222" frameHeight="100" />
+		</sceneObject>
+		<sceneObject name="opponent"
+					 positionX="450" 
+					 positionY="70"
+					 texture="chog"
+					 speed="200"
+					 visible="true" 
+					 physics="true">
+      <texture name="idle.png" frameCount="1" frameWidth="222" frameHeight="100"/>
+      <texture name="falling.png" frameCount="1" frameWidth="222" frameHeight="100" />
+		</sceneObject>
+	</scene>
+</scenes>

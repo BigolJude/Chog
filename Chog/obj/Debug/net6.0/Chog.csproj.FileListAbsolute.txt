@@ -23,6 +23,3 @@ C:\Users\jude2\Source\Repos\Chog\Chog\obj\Debug\net6.0\refint\Chog.dll
 C:\Users\jude2\Source\Repos\Chog\Chog\obj\Debug\net6.0\Chog.pdb
 C:\Users\jude2\Source\Repos\Chog\Chog\obj\Debug\net6.0\Chog.genruntimeconfig.cache
 C:\Users\jude2\Source\Repos\Chog\Chog\obj\Debug\net6.0\ref\Chog.dll
-C:\Users\jude2\Source\Repos\Chog\Chog\bin\Debug\net6.0\Content\ball.xnb
-C:\Users\jude2\Source\Repos\Chog\Chog\bin\Debug\net6.0\Content\BackgroundTest.xnb
-C:\Users\jude2\Source\Repos\Chog\Chog\bin\Debug\net6.0\Content\chog.xnb

@@ -16,7 +16,7 @@ namespace Chog.Objects.Participants
         private int currentJumpHeight;
         private bool jumping = false;
 
-        public Player(string mName, Vector2 mPosition, Texture2D mTexture, float mSpeed, bool mVisible, bool mPhysics) : base(mName, mPosition, mTexture, mSpeed, mVisible, mPhysics)
+        public Player(string mName, Vector2 mPosition, Dictionary<string, Animation> mTextureMap, float mSpeed, bool mVisible, bool mPhysics) : base(mName, mPosition, mTextureMap, mSpeed, mVisible, mPhysics)
         {
 
         }
@@ -50,14 +50,21 @@ namespace Chog.Objects.Participants
             }
 
             if (keyState.IsKeyDown(Keys.A) && this.CanMoveLeft)
+            {
                 this.PositionX -= playerVelocity;
+                 SetAnimation("walking.png");
+            }
 
             if (keyState.IsKeyDown(Keys.S) && this.CanMoveDown)
                 this.PositionY += playerVelocity;
 
             if (keyState.IsKeyDown(Keys.D) && this.CanMoveRight)
+            {
                 this.PositionX += playerVelocity;
+                SetAnimation("walking.png");
+            }
         }
+        
         
     }
 }
